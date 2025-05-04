@@ -139,7 +139,5 @@ class App:
 
 if __name__ == "__main__":
     root = tk.Tk()
-
-
-    root.mainloop()    app = App(root)    app = App(root)
-    root.mainloop()
+    app = App(root)  # Inicializa la aplicación
+    root.mainloop()  # Inicia el bucle principal de Tkinter
