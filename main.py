@@ -113,6 +113,14 @@ class App:
         mensaje = self.gestor.modificar_cliente(dni, nuevo_nombre, nuevo_apellido)
         messagebox.showinfo("Resultado", mensaje)
 
+        # Limpia los campos de entrada después de modificar
+        self.entry_nombre.delete(0, tk.END)
+        self.entry_apellido.delete(0, tk.END)
+        self.entry_dni.delete(0, tk.END)
+        self.entry_nombre.insert(0, "Nombre")
+        self.entry_apellido.insert(0, "Apellido")
+        self.entry_dni.insert(0, "DNI")
+
     def borrar_cliente(self):
         dni = self.entry_dni.get()
         mensaje = self.gestor.borrar_cliente(dni)
@@ -131,5 +139,7 @@ class App:
 
 if __name__ == "__main__":
     root = tk.Tk()
-    app = App(root)
+
+
+    root.mainloop()    app = App(root)    app = App(root)
     root.mainloop()
